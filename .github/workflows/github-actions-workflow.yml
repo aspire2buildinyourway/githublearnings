@@ -28,3 +28,15 @@ jobs:
               run: dotnet --version
             - run: echo "Status of job is ${{job.status}}"
 
+    Second-Job:
+        name: Second jobs runs on different runners and depends on first job
+        needs: First-Job
+        runs-on: windows-latest
+        steps:
+            - run: echo "Second job based on the first job but using differnt runner ${{runner.os}}"
+    
+    Third-Job:
+        name: Third job runs parallel does not have any dependency
+        runs-on: windows-latest
+        steps:
+            - run: echo "Third job runs parallel on runner ${{runner.os}}"
