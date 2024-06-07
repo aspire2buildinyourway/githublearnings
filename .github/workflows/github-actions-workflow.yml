@@ -1,0 +1,30 @@
+name: GitHub Actions Learnings
+on: push
+jobs:
+    First-Job:
+        name: Exploring the github actions
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "This is the first job running on runner ${{github.event_name}} event"
+
+            - run: |
+                echo "Run the multiple line commands"
+            
+            - name: check out the code repository
+              uses: actions/checkout@v2
+
+            - run: echo "Your repository has been copied to path ${{github.workspace}}" on the runner"
+            - name: how to make the conditional checks
+              if: ${{ github.event_name == 'push' }}
+              run: echo "This was a push"
+            - name: List the files on the working directory
+              run: |
+                ls ${{github.workspace}}
+            - name: setup dotnet on runner
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: '8.x'
+            - name: Display the dotnet version
+              run: dotnet --version
+            - run: echo "Status of job is ${{job.status}}"
+
