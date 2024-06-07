@@ -13,7 +13,7 @@ jobs:
             - name: check out the code repository
               uses: actions/checkout@v2
 
-            - run: echo "Your repository has been copied to path ${{github.workspace}}" on the runner"
+            - run: echo "Your repository has been copied to path ${{github.workspace}} on the runner"
             - name: how to make the conditional checks
               if: ${{ github.event_name == 'push' }}
               run: echo "This was a push"
