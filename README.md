@@ -18,7 +18,7 @@ Before that lets understand the Continuous Integration (CI) and Continuous Deplo
   - Context variables and Environment variables (${{variablename}})
   - Expressions, Conditions and Functions (startswith, always(), failure(), success() etc)
   - Using scripts in the workflow (run: | next line write all the scripts)
-  
+
     **Types of Github Actions**
     - Javascript Actions
     - Docker Actions
@@ -28,3 +28,15 @@ Before that lets understand the Continuous Integration (CI) and Continuous Deplo
     - Job Output variables simple strings can be passed
     - Uploading and downloading as artefacts using the github actions
     - Using Cache route (5gb cache per limit)
+
+    **Sharing data between Jobs**
+    - Job Matrix - Usually if we have need to run multiple jobs, we use this matrix.
+    Example: 
+      strategy:
+        matrix:
+          os: [windows-latest, ubuntu-latest, macos]
+          dot-net-version: [4.5.x, 5.0.x, 8.0.x]
+          exclude:
+            - os: macos
+          include:
+            - dot-net-version: [6.0.x]
