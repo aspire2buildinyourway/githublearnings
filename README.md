@@ -18,6 +18,7 @@ Before that lets understand the Continuous Integration (CI) and Continuous Deplo
   - Context variables and Environment variables (${{variablename}})
   - Expressions, Conditions and Functions (startswith, always(), failure(), success() etc)
   - Using scripts in the workflow (run: | next line write all the scripts)
+  
     **Types of Github Actions**
     - Javascript Actions
     - Docker Actions
