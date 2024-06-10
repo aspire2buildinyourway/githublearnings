@@ -32,11 +32,11 @@ Before that lets understand the Continuous Integration (CI) and Continuous Deplo
     **Sharing data between Jobs**
     - Job Matrix - Usually if we have need to run multiple jobs, we use this matrix.
     Example: 
-      strategy:
+      ```strategy:
         matrix:
           os: [windows-latest, ubuntu-latest, macos]
           dot-net-version: [4.5.x, 5.0.x, 8.0.x]
           exclude:
             - os: macos
           include:
-            - dot-net-version: [6.0.x]
+            - dot-net-version: [6.0.x]```
