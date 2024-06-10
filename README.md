@@ -12,9 +12,18 @@ Before that lets understand the Continuous Integration (CI) and Continuous Deplo
 - We will be writting all the above mentioned steps in YAML language (Yet Another Markup Language)
   ![image](https://github.com/aspire2buildinyourway/githublearnings/assets/135804475/e6cbc861-9f67-44cd-80e4-76eea26a6528)
 
+ **Workflow triggers and Variables** 
+  - Schedule Trigger using the cron expression(* * * * *)  explore CronGuru.
+  - Over API using github api's.
+  - Context variables and Environment variables (${{variablename}})
+  - Expressions, Conditions and Functions (startswith, always(), failure(), success() etc)
+  - Using scripts in the workflow (run: | next line write all the scripts)
+    **Types of Github Actions**
+    - Javascript Actions
+    - Docker Actions
+    - Composite Actions
 
-
-
-
-
-
+    **Sharing data between Jobs**
+    - Job Output variables simple strings can be passed
+    - Uploading and downloading as artefacts using the github actions
+    - Using Cache route (5gb cache per limit)
